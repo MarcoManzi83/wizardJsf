@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	    
+<h:head>
+	<title>Wizard2</title>
+</h:head>
+<h:body>
+	<h:form id="form">
+		<f:ajax event="keyup" listener="#{user.saveUserOnSession}">
+		<h:inputHidden value="#{user.id}"/>
+		<table>
+			<tr>
+				<td><h:outputLabel for="name" value="Name" /></td>
+				<td><h:outputText id="name" value="#{user.name}"/></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="username" value="userName" /></td>
+				<td><h:outputText id="username" value="#{user.username}" /></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="surname" value="Surname" /></td>
+				<td><h:outputText id="surname" value="#{user.surname}"/></td>
+			</tr>
+			<tr>
+				<td><h:commandButton type="submit" value="start wizard" action="WizardStart?faces-redirect=true"/></td>
+			</tr>
+		</table>
+		</f:ajax>
+	</h:form>
+</h:body>
+</html>
